@@ -37,16 +37,19 @@ public class Main {
                 case 3:
                     if (scoresList.isEmpty()){
                         System.out.println("Could not fetch any scores.");
-                    }else;
-                    int highestScore = Integer.MIN_VALUE;
-                    for (int currentScore : scoresList){
-                        if ( currentScore > highestScore){
-                            highestScore = currentScore;
-                        }
-                    }
-                    System.out.println("highestScore is:  " + highestScore);
+                    }else {
+                        int highestScore = Integer.MIN_VALUE;
+                        for (int currentScore : scoresList) {
+                            if (currentScore > highestScore) {
+                                highestScore = currentScore;
 
-                    break;
+                            }
+                        }
+
+                        System.out.println("highestScore is:  " + highestScore);
+
+                        break;
+                    }
 
                 case 4:
                     int sum = 0;
