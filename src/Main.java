@@ -7,7 +7,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Integer>scoresList = new ArrayList<>();
         System.out.println("Welcome to the Competition");
-
+        int counter = 0;
         while (isRunning) {
 
         System.out.println("1. Add score");
@@ -27,18 +27,23 @@ public class Main {
                     System.out.println("Insert score");
                     int score = scanner.nextInt();
                     scoresList.add(score);
+                    counter++;
                     System.out.println("Score added!");
+                    System.out.println("You have a total of: " + counter + " Scores in the list.");
                     break;
 
                 case 2:
-                    System.out.println("The scores are" + scoresList);
+                    if (scoresList.isEmpty()){
+                        System.out.println("Could not fetch any scores.");}
+
+                    else System.out.println("The scores are" + scoresList);
                     break;
 
                 case 3:
                     if (scoresList.isEmpty()){
                         System.out.println("Could not fetch any scores.");
                     }else {
-                        int highestScore = Integer.MIN_VALUE;
+                        int highestScore = 0;
                         for (int currentScore : scoresList) {
                             if (currentScore > highestScore) {
                                 highestScore = currentScore;
